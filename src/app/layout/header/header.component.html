@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
     <span style="text-align: center; color:red">Chat Application</span>
     <span class="example-spacer"></span>
+    <div *ngIf = "loggedIn()">
+        <button class="btn btn-success btn-lg float-right" (click)="onLogout()" type="submit">Logout  </button>
+      </div>
 </mat-toolbar>
