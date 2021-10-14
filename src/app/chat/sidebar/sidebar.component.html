@@ -1,0 +1,33 @@
+<mat-card id="sidebar">
+    <div style="display: flex; flex-direction: column;">
+    <div id="sidebarHeader">
+        <div class="avatarContainer"><a routerLink="/comingsoon" routerLinkActive="active"><img
+                    src="../assets/icons/no_user.png"></a></div>
+
+        <div class="actionsContainer">
+            <img src="../assets/icons/moreVerticalIcon.svg">
+            <!-- <i class='fas fa-comment-dots' style='font-size:24px'></i> -->
+        </div>
+    </div>
+    <div id="searchBox">
+        <img width="20px" src="../assets/icons/search_icon.png" />
+        <input type="text" placeholder="Search or start a new chat" />
+    </div>
+</div>
+
+    <div id="sidebarContent">
+        <!-- <h3>This if for side bar</h3> -->
+        <div class="conversation" *ngFor="let conversation of conversations">
+            <div class="picture"><img src="../assets/icons/no_user.png"></div>
+            <div class="content">
+                <div class="conversationHeader">
+                    <div class="name">{{conversation.name}}</div>
+                    <div class="time">{{conversation.time}}</div>
+                </div>
+                <div class="message"><img *ngIf="conversation.latestMessageRead" src="../assets/icons/readtick.png">
+                    <img *ngIf="!conversation.latestMessageRead" src="../assets/icons/unreadtick.png">
+                    {{conversation.latestMessage}}</div>
+            </div>
+        </div>
+    </div>
+</mat-card>

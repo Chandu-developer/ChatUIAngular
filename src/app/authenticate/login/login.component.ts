@@ -1,8 +1,8 @@
 import { asLiteral } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormControl, FormGroup, FormBuilder} from '@angular/forms'
-import {LoginService} from 'src/app/authenticate_services/login.service'
+import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms'
+import {LoginService} from 'src/app/_shared/services/login.service'
 
 
 @Component({
@@ -11,6 +11,7 @@ import {LoginService} from 'src/app/authenticate_services/login.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  hide = true;
   LoginUserForm : FormGroup = new FormGroup({});
 
 
@@ -20,15 +21,20 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.LoginUserForm = this.formBuilder.group({
-      username : new FormControl(''),
+      username : new FormControl('',[Validators.required]),
       password : new FormControl('')
 
     })
   }
 
+  get username()
+  {
+    return this.LoginUserForm.get('username');
+  }
+
   onSubmit(){
     this.loginService.login().subscribe(data =>
-      {if(data ==true){
+      {if(data == true){
       this.router.navigate(['chat/home'])
       }
       else{

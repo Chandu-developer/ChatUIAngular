@@ -1,0 +1,97 @@
+#sidebar{
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+    #sidebarHeader{
+        flex-basis: 70px;
+        background-color : #eeeeee;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-between;
+
+        .avatarContainer{
+            flex-basis: 40px;
+            height: 40px;
+            img{
+                height: 100%;
+            }
+        }
+        .actionsContainer{
+            // flex-grow: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    #searchBox{
+        flex-basis: 50px;
+        // background-color: red;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input{
+            width: 90%;
+            border :1px solid #f7f7f7;
+            border-radius: 7px;
+            height: 80%;
+            outline: none;
+        }
+    }
+
+    #sidebarContent{
+        flex-grow: 1;
+        .conversation{
+            height: 70px;
+            display: flex;
+            padding-right: 5px;
+             &:hover{
+                 background-color: #f2f2f2;
+             }
+
+            .picture{
+                flex-basis: 73px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    max-width: 100%;
+                    width: 48px;
+                }
+            }
+            .content{
+                border: 1px solid #f2f2f2;
+                flex-grow: 1;
+                padding: 10px 0px;
+                padding-right: 10px;
+                .conversationHeader{
+                    display: flex;
+                    justify-content: space-between;
+                    .time{
+                        color: #979797;
+                    }
+                }
+                .message{
+                    display: flex;
+                    color: #717171;
+                    img{
+                        max-width: 100%;
+                        width: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}

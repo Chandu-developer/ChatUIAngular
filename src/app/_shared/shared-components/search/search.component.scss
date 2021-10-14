@@ -1,0 +1,16 @@
+#searchBox{
+    flex-basis: 50px;
+    // background-color: red;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input{
+        width: 90%;
+        border :1px solid #f7f7f7;
+        border-radius: 7px;
+        height: 80%;
+        outline: none;
+    }
+}

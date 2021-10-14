@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
-
+import { MaterialModule } from 'src/app/_shared/material.module'
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   exports: [
     RegisterComponent,
