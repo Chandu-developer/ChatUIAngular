@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router'
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
-
-// material imports
-import {MatSidenavModule} from '@angular/material/sidenav';
+// material imports from shared/material.modul
+import { MaterialModule } from './_shared/material.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import modules
 import { LayoutModule } from './layout/layout.module';
 import {AuthenticateModule} from './authenticate/authenticate.module'
-
-import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import { ChatModule } from './chat/chat.module';
+import { SharedComponentsModule } from './_shared/shared-components/shared-components.module';
 
 @NgModule({
   declarations: [
@@ -22,17 +23,18 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    MatSidenavModule,
+    RouterModule,
+    MaterialModule,
     ReactiveFormsModule,
 
     //modules
     LayoutModule,
     AuthenticateModule,
-    
-    // Material imports
+    ChatModule,
+    SharedComponentsModule
     
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

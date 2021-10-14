@@ -8,10 +8,12 @@ import { RegisterComponent } from './authenticate/register/register.component';
 //home module
 import { HomeComponent } from './chat/home/home.component'
 import { AuthGuard } from './shared/auth.guard';
+import { ComingSoonComponent } from './_shared/shared-components/coming-soon/coming-soon.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
   {path : 'register',component: RegisterComponent},
+  {path : 'comingsoon', component: ComingSoonComponent},
   {path : 'chat',
     children : [
       {path: 'home', component: HomeComponent, canActivate:[AuthGuard]}
