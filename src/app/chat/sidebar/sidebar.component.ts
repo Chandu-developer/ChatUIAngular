@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  @Output() conversationClicked: EventEmitter<any> = new EventEmitter();
   conversations = [
     {name:"dfs", time:"10:00 pm", latestMessage: "Good Morning!", latestMessageRead: false},
     {name:"ravi", time:"10:00 am", latestMessage: "Hello", latestMessageRead: true},

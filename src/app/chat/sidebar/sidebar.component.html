@@ -17,7 +17,8 @@
 
     <div id="sidebarContent">
         <!-- <h3>This if for side bar</h3> -->
-        <div class="conversation" *ngFor="let conversation of conversations">
+        <div class="conversation" *ngFor="let conversation of conversations" 
+        (click)="conversationClicked.emit(conversation)">
             <div class="picture"><img src="../assets/icons/no_user.png"></div>
             <div class="content">
                 <div class="conversationHeader">

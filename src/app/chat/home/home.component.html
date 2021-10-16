@@ -1,8 +1,10 @@
  <mat-card id="chatContainer">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (conversationClicked)="onConversationSelected($event)">
+    </app-sidebar>
     <div id="chat">
-        <div id="chatPlaceHolder">
+        <div id="chatPlaceHolder" *ngIf="!conversation">
             <h2><b>No conversation selected yet</b></h2>
         </div>
+        <app-conversation *ngIf="conversation"></app-conversation>
     </div> 
  </mat-card>
