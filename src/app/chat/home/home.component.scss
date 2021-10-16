@@ -17,4 +17,15 @@
         flex-basis: 30%;
         display: block;
     }
+    #chat{
+        // background-color: grey;
+        flex-grow: 1;
+
+        #chatPlaceHolder{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: blue;
+        }
+    }
 }
